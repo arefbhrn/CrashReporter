@@ -1,0 +1,41 @@
+apply plugin: 'com.github.dcendents.android-maven'
+
+def siteUrl = 'https://github.com/arefbhrn/CrashReporter'
+def gitUrl = 'https://github.com/arefbhrn/CrashReporter.git'
+
+group = 'com.arefbhrn.libraries'
+version = '1.2.0'
+
+install {
+    repositories.mavenInstaller {
+        pom.project {
+            packaging 'aar'
+
+            name 'Crash Reporter'
+            description 'Crash Reporter is a handly tool to capture crashes and save in file'
+            url siteUrl
+            inceptionYear '2020'
+
+            licenses {
+                license {
+                    name 'The Apache Software License, Version 2.0'
+                    url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                }
+            }
+
+            developers {
+                developer {
+                    id 'arefbhrn'
+                    name 'Aref Bahreini Nejad'
+                    email 'arefbhrn@gmail.com'
+                }
+            }
+
+            scm {
+                connection gitUrl
+                developerConnection gitUrl
+                url siteUrl
+            }
+        }
+    }
+}
